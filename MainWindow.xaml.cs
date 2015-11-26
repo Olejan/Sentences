@@ -41,7 +41,6 @@ namespace Sentences
             // int ind = dlg.FilterIndex;
             //dlg.FilterIndex = ind;
             string str = File.ReadAllText(dlg.FileName);
-            //List<string> strs = new List<string>(); // промежуточный набор с разделителем "..."
             List<string> ens = ParseSentences(str);
         }
 
