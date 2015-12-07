@@ -11,9 +11,51 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="1" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,5,0,5"
-                Content="Load sentences" Click="BtnLoad_Click"/>
-        <Button Grid.Row="1" Height="25" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,25,5"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" Header="En">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="120"
+                            Content="Insert the original" Click="Btn_PasteEn_Click"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Height="25" Width="25" Margin="5"
+                            Content="C" Click="Btn_ClearEn_Click"/>
+                    <RichTextBox x:Name="rtbEn" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Header="Ru">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="120"
+                            Content="Insert the translation" Click="Btn_PasteRu_Click"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Height="25" Width="25" Margin="5"
+                            Content="C" Click="Btn_ClearRu_Click"/>
+                    <RichTextBox x:Name="rtbRu" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="180"/>
+            </Grid.ColumnDefinitions>
+            <!--Button Grid.Column="0" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,5,0,5"
+                Content="Load sentences" Click="BtnLoad_Click"/-->
+            <Button Grid.Column="0" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="200,5,0,5"
+                Content="Go" Click="BtnGo_Click"/>
+            <Button Grid.Column="1" Height="25" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,25,5"
                 Content="Close" Click="BtnClose_Click"/>
+        </Grid>
     </Grid>
 </Window>
